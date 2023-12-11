@@ -1,4 +1,4 @@
-{% set version = '2.0.16' %}
+{% set version = "2.0.17" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rxode2parse_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rxode2parse/rxode2parse_{{ version }}.tar.gz
-  sha256: 722f8a6c3080a9afe1ca30bcd0865fd43b67572537572410b4ecccb8377c1078
+  sha256: e0e57c2e016cb2899b5c559117d766d06e763889017376e781574f2c68c8bc20
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -54,15 +54,16 @@ requirements:
     - r-knitr
     - r-qs
     - r-rex
+    - r-symengine
   run:
     - r-base
     - {{ native }}gcc-libs           # [win]
     - {{ native }}libwinpthread-git  # [win]
-    - r-bh >=1.78.0.0
+    #- r-bh >=1.78.0.0
     - r-rcpp >=1.0.8
     - r-rcppeigen >=0.3.3.9.2
     - r-rcppparallel
-    - r-stanheaders >=2.21.0.7
+    #- r-stanheaders >=2.21.0.7
     - r-checkmate
     - r-crayon
     - r-data.table >=1.12.4
@@ -71,6 +72,7 @@ requirements:
     - r-knitr
     - r-qs
     - r-rex
+    - r-symengine
 
 test:
   commands:
@@ -81,11 +83,8 @@ about:
   home: https://nlmixr2.github.io/rxode2parse/
   dev_url: https://github.com/nlmixr2/rxode2parse/
   license: GPL-3.0-or-later
-  summary: Provides the parsing needed for 'rxode2' (Wang, Hallow and James (2016) <doi:10.1002/psp4.12052>).
-    It also provides the 'stan' based advan linear compartment model solutions with
-    gradients (Carpenter et al (2015), <arXiv:1509.07164>) needed in 'nlmixr2' (Fidler
-    et al (2019) <doi:10.1002/psp4.12445>). This split will reduce computational burden
-    of recompiling 'rxode2'.
+  summary: Provides the parsing needed for 'rxode2' (Wang, Hallow and James (2016) <doi:10.1002/psp4.12052>). It also provides the 'stan' based advan linear compartment model solutions with gradients (Carpenter et al (2015), <arXiv:1509.07164>) needed in 'nlmixr2' (Fidler et al (2019) <doi:10.1002/psp4.12445>). This split
+    will reduce computational burden of recompiling 'rxode2'.
   license_family: GPL3
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
