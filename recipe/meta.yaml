@@ -1,4 +1,4 @@
-{% set version = "2.0.17" %}
+{% set version = "2.0.18" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rxode2parse_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rxode2parse/rxode2parse_{{ version }}.tar.gz
-  sha256: e0e57c2e016cb2899b5c559117d766d06e763889017376e781574f2c68c8bc20
+  sha256: db2fa16b010b121f4b2186bc2b9ffaa3c5574447326e18dbc41fd5ed68700aa0
 
 build:
   merge_build_host: true  # [win]
