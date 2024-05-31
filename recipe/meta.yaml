@@ -54,6 +54,7 @@ requirements:
     - r-qs
     - r-rcpp >=1.0.8
     - r-rcppeigen >=0.3.3.9.2
+    - r-rcppparallel
     - r-rex
     - r-stanheaders >=2.21.0.7
     - r-symengine
@@ -71,6 +72,7 @@ requirements:
     - r-qs
     - r-rcpp >=1.0.8
     - r-rcppeigen >=0.3.3.9.2
+    - r-rcppparallel
     - r-rex
     #- r-stanheaders >=2.21.0.7
     - r-symengine
