@@ -21,6 +21,7 @@ build:
   missing_dso_whitelist:
     - '*/R.dll'           # [win]
     - '*/tbb.dll'         # [win]
+  skip: true  # [win]
 
 requirements:
   build:
